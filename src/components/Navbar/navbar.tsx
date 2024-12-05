@@ -10,16 +10,16 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen)
 
   return (
-    <header className="bg-black">
-      <div className="container mx-auto px-4">
+    <header className="border border-spacing-10 ">
+      <div className="container mx-auto px-4 ">
         <div className="flex h-16 items-center justify-between">
-          <a href="/" className="text-2xl font-medium text-white "style={{
+          <a href="/" className="text-2xl font-medium text-black pl-6 "style={{
               fontFamily: 'parkin, sans-serif'
               }}>
             CJ
           </a>
           <button
-            className="text-white md:hidden"
+            className="text-black md:hidden"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -45,11 +45,14 @@ function NavLinks({ mobile = false }: { mobile?: boolean }) {
       {["HOME", "PROJECT", "CONTACT", "PROFILE"].map((item) => (
         <a
           key={item}
+          style={{
+            fontFamily: 'parkin, sans-serif'
+            }}
           href={item === "HOME" ? "/" : `/${item.toLowerCase()}`}
-          className={`text-sm font-medium ${
+          className={`text-sm font-medium font-bold pr-4 sticky  ${
             mobile
-              ? "block py-2 text-white hover:text-white/80"
-              : "text-white/80 hover:text-white"
+              ? "block py-2 text-black hover:text-black/80"
+              : "text-black/80 hover:text-black"
           }`}
         >
           {item}

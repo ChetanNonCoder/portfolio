@@ -1,20 +1,26 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import './App.css'
 import MainLayout from "./components/Layout/mainLayout";
-import HeroSection from "./components/HeroSection/heroSection";
+import Home from "./components/Home/home";
 import Project from "./components/Project/project";
+import Profile from "./components/Profile/profile";
 
 const appRouter = createBrowserRouter([{
   path: "/",
     element: <MainLayout />,
     children: [{
       path: "/",
-      element: <HeroSection />,
+      element: <Home/>,
 },
 {
   path: "/project",
   element: <Project/>,
-}],
+},
+{
+  path: "/profile",
+  element:<Profile/>
+}
+],
 }])
 
 function App() {
